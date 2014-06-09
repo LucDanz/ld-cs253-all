@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="post">
+	<h2> Add an Order</h2>
+	<p> Today's breakfast of the day is a Breakfast Burrito ($5)</p>
+	<input onClick="this.select();" type="text" name="count" value="{{count}}">
+	<input onClick="this.select();" type="text" name="name" value="{{name}}">
+	<div class="error">{{error}}</div>
+
+	<button>Add</button>
+	
+	{% if orders %}
+		<br>
+		<br>
+
+		<h2>Order List</h2>
+		<ul>
+			{% for item in orders %}
+				<li>{{item.count}} {{item.name}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+</form>
+
+{% endblock %}

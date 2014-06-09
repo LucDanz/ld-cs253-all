@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+  <title>CS 253 Blog</title>
+</head>
+
+<body>
+	<div id="nav">
+		<ul>
+		  	{% if user %}
+		  		<li><a href="/logout"> Logout </a></li>
+		  		<li><a href="/newpost"> New Post </a></li>
+		  	{% else %}
+		  		<li><a href="/signup"> Signup </a></li>
+		  		<li><a href="/login"> Login </a></li>
+		  	{% endif %}
+	  	</ul>
+	</div>
+  <a href="/blog" class="main-title">CS 253 Blog</a>
+
+
+  <div id="content">
+  {% block content %}
+  {% endblock %}
+  </div>
+</body>
+
+</html>
+
